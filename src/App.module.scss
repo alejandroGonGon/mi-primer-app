@@ -1,9 +1,6 @@
-.App {
-  text-align: center;
-}
 
 .AppLogo {
-  height: 40vmin;
+  height: 9vmin;
   pointer-events: none;
 }
 
@@ -15,17 +12,16 @@
 
 .AppHeader {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .AppLink {
-  color: #61dafb;
+    color: #61dafb;
+    margin-right: 24px;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +31,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+header{
+  margin-bottom: 50px;
+}
+p {
+  display: inline-block;
+}
+
+.infoanime {
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+.imgcard {
+  overflow: hidden;
+  margin-bottom: 20px;
+  float: left;
+  width: 30%;
+}
+  .card {
+    position: relative;
+    float: none;
+    overflow-y: auto;
 }
