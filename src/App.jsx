@@ -7,6 +7,7 @@ import axios from 'axios';
 import logo from './logo.svg';
 import styles from './App.module.scss';
 import Anime from './components/Anime';
+import Pelicula from './components/peliculas';
 
 function App() {
   const [paises, setPaises] = useState([]);
@@ -52,6 +53,7 @@ function App() {
       </select>
       <h1>Tarea Individual 1 - parte 2</h1>
       <Anime />
+      <Pelicula />
 
     </div>
   );

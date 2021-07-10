@@ -6,6 +6,7 @@
 
 import React from 'react';
 import styles from '../App.module.scss';
+import { getAnimes } from '../servicios/Services';
 
 class Anime extends React.Component {
   constructor(props) {
@@ -16,10 +17,9 @@ class Anime extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch('https://kitsu.io/api/edge/anime?filter[categories]=seinen')
-      .then((response) => response.json())
-      .then((animesResult) => this.setState({ animes: animesResult.data }));
+  async componentDidMount() {
+    const responseJson = await getAnimes();
+    this.setState({ animes: responseJson.data });
   }
 
   renderizarLosAnimes() {
