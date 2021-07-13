@@ -19,9 +19,10 @@ class Pelicula extends React.Component {
   }
 
   postPelicula = async () => {
-    const tittle = document.getElementById('titulo-pelicula');
-    const url = document.getElementById('url-pelicula');
-    const peli = { name: 'Prueba12', img: 'pruebaa' };
+    const tittle = document.getElementById('titulo-pelicula').value;
+    const url = document.getElementById('url-pelicula').value;
+    // eslint-disable-next-line no-debugger
+    const peli = { name: tittle, img: url };
     try {
       await axios.post('http://localhost/phpMailer-ejercicio/code/apiPeliculas.php/', peli)
         .then((response) => {
