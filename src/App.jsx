@@ -1,6 +1,4 @@
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';

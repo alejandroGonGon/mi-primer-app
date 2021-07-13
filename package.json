@@ -7,11 +7,12 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
-    "node-sass": "^6.0.0",
+    "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "typescript": "^4.3.5",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -41,5 +42,14 @@
   },
   "devDependencies": {
     "eslint-config-airbnb": "^18.2.1"
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "global-require": 0,
+    "eslint linebreak-style": [
+      0,
+      "error",
+      "windows"
+    ]
   }
 }

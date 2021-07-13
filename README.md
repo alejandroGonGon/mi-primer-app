@@ -1,5 +1,15 @@
 # Getting Started with Create React App
 
+Comands to get the project running correcly
+
+### npm i
+### npm install eslint-config-airbnb -D
+###  npm audit fix
+###  npm install -D typescripnpm install -D typescrip 
+###  npx eslint . --fix
+
+# Getting Started with Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
