@@ -5,6 +5,12 @@ export async function getAnimes() {
   const responseJson = await response.json();
   return responseJson;
 }
+export async function getPeliculas() {
+  const response = await fetch('http://localhost/phpMailer-ejercicio/code/apiPeliculas.php');
+  const responseJson = await response.json();
+  return responseJson;
+}
+
 export default {
-  getAnimes,
+  getAnimes, getPeliculas,
 };

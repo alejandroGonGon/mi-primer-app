@@ -1,12 +1,9 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-console *//* eslint-disable react/no-unused-state */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 
 import React from 'react';
 import axios from 'axios';
+import { getPeliculas } from '../servicios/Services';
 import styles from '../App.module.scss';
 
 class Pelicula extends React.Component {
@@ -21,9 +18,8 @@ class Pelicula extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('http://localhost/phpMailer-ejercicio/code/apiPeliculas.php');
-    const responseJson = await response.json();
-    this.setState({ peliculas: responseJson.data });
+    const responseJson = await getPeliculas();
+    this.setState({ peliculas: responseJson });
   }
 
   postPelicula = async () => {
@@ -52,7 +48,7 @@ class Pelicula extends React.Component {
           <>
             <div className="cardPelicula">
               <div className="imgagePelicula">
-                <img src={pelicula.url} alt="" />
+                <img src={pelicula.img} alt="" />
               </div>
               <div className="nombrePelicula">
                 <h2>{pelicula.nombre}</h2>
@@ -73,7 +69,7 @@ class Pelicula extends React.Component {
           <input id="submit-pelicula" type="button" value="submit" onClick={this.postPelicula} />
         </div>
         <div className="verPeliculas">
-          {this.renderPeliculas}
+          {this.renderPeliculas()}
         </div>
         <div className="onePelicula">
           <input type="text" id="searchPelicula" placeholder="nombre de pelicula" />
