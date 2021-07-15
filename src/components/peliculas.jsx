@@ -20,6 +20,12 @@ class Pelicula extends React.Component {
     };
   }
 
+  async componentDidMount() {
+    const response = await fetch('http://localhost/phpMailer-ejercicio/code/apiPeliculas.php');
+    const responseJson = await response.json();
+    this.setState({ peliculas: responseJson.data });
+  }
+
   postPelicula = async () => {
     const { nombre, url } = this.state;
     const peli = { name: nombre, img: url };
@@ -38,10 +44,24 @@ class Pelicula extends React.Component {
     }
   }
 
-  getPeliculas = async () => {
-    const response = await fetch('http://localhost/phpMailer-ejercicio/code/apiPeliculas.php');
-    const responseJson = await response.json();
-    this.setState({ peliculas: responseJson.data });
+  renderPeliculas() {
+    const { peliculas } = this.state;
+    return (
+      <div>
+        {peliculas.map((pelicula) => (
+          <>
+            <div className="cardPelicula">
+              <div className="imgagePelicula">
+                <img src={pelicula.url} alt="" />
+              </div>
+              <div className="nombrePelicula">
+                <h2>{pelicula.nombre}</h2>
+              </div>
+            </div>
+          </>
+        ))}
+      </div>
+    );
   }
 
   render() {
@@ -52,8 +72,8 @@ class Pelicula extends React.Component {
           <input id="urlPelicula" type="text" placeholder="Ingrese la url de la imagen" onChange={this.toState} />
           <input id="submit-pelicula" type="button" value="submit" onClick={this.postPelicula} />
         </div>
-        <div className="verPelicula">
-          /
+        <div className="verPeliculas">
+          {this.renderPeliculas}
         </div>
         <div className="onePelicula">
           <input type="text" id="searchPelicula" placeholder="nombre de pelicula" />
