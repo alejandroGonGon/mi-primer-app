@@ -2,11 +2,11 @@
 
 Comands to get the project running correcly
 
-### npm i
-### npm install eslint-config-airbnb -D
-###  npm audit fix
-###  npm install -D typescripnpm install -D typescrip 
-###  npx eslint . --fix
+### `npm i`
+### `npm install eslint-config-airbnb -D`
+###  `npm audit fix`
+###  `npm install -D typescripnpm install -D typescrip `
+###  `npx eslint . --fix`
 
 # Getting Started with Create React App
 
