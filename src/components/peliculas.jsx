@@ -1,10 +1,8 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
 
 import React from 'react';
 import axios from 'axios';
 import { getPeliculas } from '../servicios/Services';
-import styles from '../App.module.scss';
 
 class Pelicula extends React.Component {
   constructor(props) {

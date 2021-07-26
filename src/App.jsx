@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable import/no-named-as-default-member */
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
@@ -10,7 +9,6 @@ import Pelicula from './components/peliculas';
 
 function App() {
   const [paises, setPaises] = useState([]);
-  const [error, setError] = useState('');
   useEffect(() => {
     const getPaises = async () => {
       try {
@@ -18,7 +16,7 @@ function App() {
         console.log(response.data);
         setPaises(response.data);
       } catch (err) {
-        setError('Hubo un eror al traer los pasies');
+        console.log('Hubo un eror al traer los pasies');
       }
     };
     getPaises();

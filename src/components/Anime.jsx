@@ -1,8 +1,4 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable linebreak-style */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-unused-vars */
 
 import React from 'react';
 import styles from '../App.module.scss';
