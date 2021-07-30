@@ -17,7 +17,7 @@ class Pelicula extends React.Component {
 
   async componentDidMount() {
     const responseJson = await getPeliculas();
-    this.setState({ peliculas: responseJson });
+    this.setState({ peliculas: responseJson.data });
   }
 
   postPelicula = async () => {
@@ -38,7 +38,7 @@ class Pelicula extends React.Component {
     }
   }
 
-  renderPeliculas() {
+  renderPeliculas = () => {
     const { peliculas } = this.state;
     return (
       <div>
@@ -67,7 +67,7 @@ class Pelicula extends React.Component {
           <input id="submit-pelicula" type="button" value="submit" onClick={this.postPelicula} />
         </div>
         <div className="verPeliculas">
-          {this.renderPeliculas()}
+          { this.renderPeliculas() }
         </div>
         <div className="onePelicula">
           <input type="text" id="searchPelicula" placeholder="nombre de pelicula" />
