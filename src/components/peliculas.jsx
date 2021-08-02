@@ -58,6 +58,23 @@ class Pelicula extends React.Component {
     );
   }
 
+  getPelicula = () => {
+    const { peliculas } = this.state;
+
+    const pelicula = peliculas.filter(({ idPelicula }) => idPelicula === 1);
+
+    return (
+      <div className="cardPelicula">
+        <div className="imgagePelicula">
+          <img src={pelicula.img} alt="" />
+        </div>
+        <div className="nombrePelicula">
+          <h2>{pelicula.nombre}</h2>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="">
@@ -71,15 +88,7 @@ class Pelicula extends React.Component {
         </div>
         <div className="onePelicula">
           <input type="text" id="searchPelicula" placeholder="nombre de pelicula" />
-          <input type="button" value="buscar" />
-          <div className="cardPelicula">
-            <div className="imgagePelicula">
-              <img src="" alt="" />
-            </div>
-            <div className="nombrePelicula">
-              <h2>Titulo</h2>
-            </div>
-          </div>
+          <input type="button" value="buscar" onClick={this.getPelicula()} />
         </div>
       </div>
     );
