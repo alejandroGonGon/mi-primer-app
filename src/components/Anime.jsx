@@ -1,22 +1,24 @@
 /* eslint-disable linebreak-style */
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import styles from '../App.module.scss';
 import { getAnimes } from '../servicios/Services';
 
 function Anime() {
   const [animes, setAnimes] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const getAnimes = async () => {
+    const bringAnimes = async () => {
       try {
-        const responseJson = await axios.get(getAnimes());
+        setLoading(true);
+        const responseJson = await getAnimes();
         setAnimes(responseJson.data);
       } catch (error) {
         // setError('Error')
+      } finally {
+        setLoading(false);
       }
     };
-    getAnimes();
+    bringAnimes();
   }, []);
   const renderizarLosAnimes = () => (
     <div>
@@ -35,9 +37,10 @@ function Anime() {
       ))}
     </div>
   );
+  if (loading) return <p>loading animes...</p>;
   return (
     <div className="container-render">
-      {renderizarLosAnimes()}
+      { renderizarLosAnimes() }
     </div>
   );
 }

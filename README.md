@@ -8,6 +8,14 @@ Comands to get the project running correcly
 ###  `npm install -D typescripnpm install -D typescrip `
 ###  `npx eslint . --fix`
 
+# How to start the backend
+
+Steps to get started the prject in laravel
+
+- clone the repository to htdocs
+- ejcetute commands
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

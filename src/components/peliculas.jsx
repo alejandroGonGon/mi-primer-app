@@ -26,7 +26,7 @@ class Pelicula extends React.Component {
     try {
       await axios.post('http://localhost/phpMailer-ejercicio/code/apiPeliculas.php/', peli);
     } catch (error) {
-      console.log('Error');
+      // setError
     }
   }
 
@@ -57,12 +57,7 @@ class Pelicula extends React.Component {
       </div>
     );
   }
-
-  getPelicula = () => {
-    const { peliculas } = this.state;
-
-    const pelicula = peliculas.filter(({ idPelicula }) => idPelicula === 1);
-
+  /*
     return (
       <div className="cardPelicula">
         <div className="imgagePelicula">
@@ -73,25 +68,34 @@ class Pelicula extends React.Component {
         </div>
       </div>
     );
-  }
+    */
 
-  render() {
-    return (
-      <div className="">
-        <div className="formCrearPelicula">
-          <input id="tituloPelicula" type="text" placeholder="Ingrese una pelicula" onChange={this.toState} />
-          <input id="urlPelicula" type="text" placeholder="Ingrese la url de la imagen" onChange={this.toState} />
-          <input id="submit-pelicula" type="button" value="submit" onClick={this.postPelicula} />
+    getPelicula = async (event) => {
+      const e = event.target.value;
+      // console.log(e);
+      const { peliculas } = this.state;
+      const pelicula = peliculas.filter(({ idPelicula }) => idPelicula === e);
+      console.log(pelicula);
+    };
+
+    render() {
+      return (
+        <div className="">
+          <div className="formCrearPelicula">
+            <input id="tituloPelicula" type="text" placeholder="Ingrese una pelicula" onChange={this.toState} />
+            <input id="urlPelicula" type="text" placeholder="Ingrese la url de la imagen" onChange={this.toState} />
+            <input id="submit-pelicula" type="button" value="submit" onClick={this.postPelicula} />
+          </div>
+          <div className="verPeliculas">
+            { this.renderPeliculas() }
+          </div>
+          <div className="onePelicula">
+            <input type="text" id="searchPelicula" placeholder="nombre de pelicula" onChange={this.getPelicula} />
+            <input type="button" value="buscar" />
+
+          </div>
         </div>
-        <div className="verPeliculas">
-          { this.renderPeliculas() }
-        </div>
-        <div className="onePelicula">
-          <input type="text" id="searchPelicula" placeholder="nombre de pelicula" />
-          <input type="button" value="buscar" onClick={this.getPelicula()} />
-        </div>
-      </div>
-    );
-  }
+      );
+    }
 }
 export default Pelicula;
