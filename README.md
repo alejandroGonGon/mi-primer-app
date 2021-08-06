@@ -19,7 +19,8 @@
 
 		git clone https://github.com/alejandroGonGon/anima-api.git
 - Turn on Apache and MySql
--  Open the terminal in the repository and do :
+- Run the databse.sql to create and have the database with data.
+- Open the terminal in the repository and do :
 		
 		composer install
 - Copy this at the end of this file `C:\xampp\apache\conf\extra\httpd-vhosts.conf`
@@ -30,9 +31,3 @@
 			ErrorLog "logs/anima-api_error.localhost.log"
 			CustomLog "logs/anima-api_access.localhost.log" common
 		</VirtualHost>
-# Recomendations
-
-Things to have the enviorment running without doing something unneccesary.
-
-- Have already installed XAMPP
-- Run the .sql to create and have the database with data.
