@@ -8,6 +8,25 @@ Comands to get the project running correcly
 ###  `npm install -D typescripnpm install -D typescrip `
 ###  `npx eslint . --fix`
 
+# How to start the backend
+
+Steps to get started the prject in laravel
+
+- clone the repository to htdocs
+- ejcetute the follows to run the eviroment in laravel
+-- git clone repositoryLink in htdocs
+--  open the terminal in the repositorie
+-- do composer install
+-- copy this at the end of this file C:\xampp\apache\conf\extra\httpd-vhosts.conf
+<VirtualHost *:80>
+	DocumentRoot "C:/xampp/htdocs/anima-api/public"
+	ServerName anima-api.localhost
+	ErrorLog "logs/anima-api_error.localhost.log"
+	CustomLog "logs/anima-api_access.localhost.log" common
+</VirtualHost>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

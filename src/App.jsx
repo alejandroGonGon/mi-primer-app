@@ -13,7 +13,6 @@ function App() {
     const getPaises = async () => {
       try {
         const response = await axios.get('https://restcountries.eu/rest/v2/all?fields=name');
-        console.log(response.data);
         setPaises(response.data);
       } catch (err) {
         console.log('Hubo un eror al traer los pasies');
