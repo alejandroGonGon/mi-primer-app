@@ -18,6 +18,7 @@
 - Clone the backend laravel repository:
 
 		git clone https://github.com/alejandroGonGon/anima-api.git
+- Turn on Apache and MySql
 -  Open the terminal in the repository and do :
 		
 		composer install
@@ -29,3 +30,9 @@
 			ErrorLog "logs/anima-api_error.localhost.log"
 			CustomLog "logs/anima-api_access.localhost.log" common
 		</VirtualHost>
+# Recomendations
+
+Things to have the enviorment running without doing something unneccesary.
+
+- Have already installed XAMPP
+- Run the .sql to create and have the database with data.
