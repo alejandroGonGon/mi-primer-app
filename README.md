@@ -19,7 +19,7 @@
 
 		git clone https://github.com/alejandroGonGon/anima-api.git
 - Turn on Apache and MySql
-- Run the databse.sql to create and have the database with data.
+- Abra la consola en XAMPP y escriba lo siguiente "mysql -u root -p < C:\xampp\htdocs\...\database.sql" (agregando la ruta absoluta hacia el archivo database.sql).
 - Open the terminal in the repository and do :
 		
 		composer install
