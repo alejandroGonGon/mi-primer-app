@@ -63,20 +63,24 @@ function Pelicula() {
   };
 
   const renderUnaPeli = () => {
-    if (idPel > 0) {
-      const pelicula = peliculas.filter(({ idPelicula }) => idPelicula === parseFloat(idPel));
-      return (
-        <div className="cardPelicula">
-          <div className="imgagePelicula">
-            <img src={pelicula[0].img} alt="" />
+    try {
+      if (idPel > 0) {
+        const pelicula = peliculas.filter(({ idPelicula }) => idPelicula === parseFloat(idPel));
+        return (
+          <div className="cardPelicula">
+            <div className="imgagePelicula">
+              <img src={pelicula[0].img} alt="" />
+            </div>
+            <div className="nombrePelicula">
+              <h2>{pelicula[0].nombre}</h2>
+            </div>
           </div>
-          <div className="nombrePelicula">
-            <h2>{pelicula[0].nombre}</h2>
-          </div>
-        </div>
-      );
+        );
+      }
+      return console.log('Todavia Nada');
+    } catch (error) {
+      return console.log(error);
     }
-    return console.log('Todavia Nada');
   };
   if (loading) return <p>loading peliculas...</p>;
   return (
